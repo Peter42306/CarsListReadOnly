@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CarsListReadOnly.Models.Car>
+
+<div>
+	<h3>Cars List</h3>
+	<table class="table">
+		<thead>
+			<th>Manufacturer</th>
+			<th>Model</th>
+			<th>Year</th>
+			<th>Price</th>
+			<th>Brief description</th>
+			<th>Availability</th>
+		</thead>
+		<tbody>
+			@foreach(var item in Model)
+			{
+				<tr>
+					<td>@item.Manufacturer</td>
+					<td>@item.Model</td>
+					<td>@item.Year</td>
+					<td>@item.Price</td>
+					<td>@item.Description</td>
+					<td>@(item.IsAvailable ? "In Stock" : "Out of Stock")</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
